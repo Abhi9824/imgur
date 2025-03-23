@@ -1,4 +1,9 @@
 .navbar-wrapper {
+    position: fixed;           
+    top: 0;                    
+    left: 0;
+    width: 100%;
+    z-index: 2;  
     background-image: url('/bg.png');
     background-size: cover;
     background-position: center;
@@ -24,11 +29,7 @@
     flex: 1;
   }
   
-  /* .brand {
-    font-size: 28px;
-    font-weight: 700;
-    color: white;
-  } */
+
   .brand {
     font-size: 28px;
     font-weight: 700;

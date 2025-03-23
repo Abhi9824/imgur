@@ -4,7 +4,7 @@ import PostCard from "../../components/PostCard/PostCard";
 const Home = () => {
   return (
     <>
-      <div>
+      <div style={{ paddingTop: "70px" }}>
         <ExploreTags />
         <PostCard />
       </div>

@@ -9,7 +9,6 @@ const Navbar = () => {
     <nav className="navbar-wrapper">
       <div className="navbar-container">
         {/* Brand always visible */}
-        {/* Brand with route to homepage */}
         <Link to="/" className="brand fs-2 me-3">
           imgur
         </Link>

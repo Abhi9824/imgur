@@ -1,20 +1,22 @@
-import { useState } from "react";
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Home from "./pages/Home/Home";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./pages/Footer/Footer";
+import Loading from "./components/Loading/Loading";
+const Home = lazy(() => import("./pages/Home/Home"));
+const Navbar = lazy(() => import("./components/Navbar/Navbar"));
+const Footer = lazy(() => import("./pages/Footer/Footer"));
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer />
+      <Suspense fallback={<Loading />}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </Suspense>
     </Router>
   );
 }
